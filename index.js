@@ -15,15 +15,14 @@ const dataList = [
     {
         RegNo:'STD-1',
         name: 'Parveez',
-        Email: 'parveezp178@gmail.com',
-        Phone: 8123456790,
-       
+        Email: 'parveez123@gmail.com',
+        Phone: 8123456790     
     },
     {
         RegNo:'STD-2',
-        name: 'Nyaeem',
-        Email: 'Nayeem@gmail.com',
-        Phone: 8123456980,
+        name: 'Nayeem',
+        Email: 'nayeem123@gmail.com',
+        Phone: 8123456980
     }
 ];
 
