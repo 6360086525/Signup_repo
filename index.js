@@ -23,6 +23,18 @@ const dataList = [
         name: 'Nayeem',
         //Email: 'nayeem123@gmail.com',
         Phone: 8123456980
+    },
+    {
+        RegNo:'STD-3',
+        name: 'Parveez',
+        //Email: 'parveez123@gmail.com',
+        Phone: 8123456790     
+    },
+    {
+        RegNo:'STD-4',
+        name: 'Nayeem',
+        //Email: 'nayeem123@gmail.com',
+        Phone: 8123456980
     }
 ];
 
