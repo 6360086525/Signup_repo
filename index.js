@@ -13,18 +13,17 @@ const Port = process.env.PORT || 3000;
 
 const dataList = [
     {
+        RegNo:'STD-1',
         name: 'Parveez',
         Email: 'parveezp178@gmail.com',
         Phone: 8123456790,
-        Gender: 'Male',
-        City: 'Bangalore'
+       
     },
     {
-        name: 'Nayeem',
+        RegNo:'STD-2',
+        name: 'Nyaeem',
         Email: 'Nayeem@gmail.com',
-        Phone: 0987654390,
-        Gender: 'Male',
-        City: 'Bangalore'
+        Phone: 8123456980,
     }
 ];
 
@@ -34,8 +33,8 @@ app.get('/', (req, res) => {
 app.post('/', (req, res) => {
     if (dataList != []) {
         for (let i in dataList) {
-            if (dataList[i].name != '' && dataList[i].Email != '' && dataList[i].Gender != '' && dataList[i].City != '') {
-                pool.query(`INSERT INTO salesforce.Heroku_test__c(MemberName__c, Email__c, Phone_number__c, Gender__c,City__c)VALUES($1,$2,$3,$4,$5) ON CONFLICT (Phone_number__c) DO NOTHING`, [`${dataList[i].MemberName__c}`, `${dataList[i].Email__c}`, `${dataList[i].Phone_number__c}`, `${dataList[i].Gender__c}`, `${dataList[i].City__c}`]); 
+            if (dataList[i].RegNo != '' && dataList[i].name != '' && dataList[i].Email != '') {
+                pool.query(`INSERT INTO salesforce.	Student__c(RegNo__c,Name__c,Email__c, phone__c)VALUES($1,$2,$3,$4) ON CONFLICT (RegNo__c) DO NOTHING`, [`${dataList[i].RegNo__c}`, `${dataList[i].Name__c}`, `${dataList[i].Email__c}`, `${dataList[i].phone__c}`]); 
                 //(err, res) => {
 
                 // if (err) {
