@@ -32,8 +32,8 @@ app.get('/', (req, res) => {
 app.post('/', (req, res) => {
     if (dataList != []) {
         for (let i in dataList) {
-            if (dataList[i].RegNo != '' && dataList[i].name != '' && dataList[i].Email != '') {
-                pool.query(`INSERT INTO salesforce.Student__c(RegNo__c,Name__c,Email__c, phone__c)VALUES($1,$2,$3,$4) ON CONFLICT (RegNo__c) DO NOTHING`, [`${dataList[i].RegNo__c}`, `${dataList[i].Name__c}`, `${dataList[i].Email__c}`, `${dataList[i].phone__c}`]); 
+            if (dataList[i].RegNo != '' && dataList[i].name != '') {
+                pool.query(`INSERT INTO salesforce.Student__c(RegNo__c,Name__c,phone__c)VALUES($1,$2,$3) ON CONFLICT (RegNo__c) DO NOTHING`, [`${dataList[i].RegNo__c}`, `${dataList[i].Name__c}`, `${dataList[i].phone__c}`]); 
                 //(err, res) => {
 
                 // if (err) {
