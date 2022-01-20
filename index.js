@@ -13,39 +13,22 @@ const Port = process.env.PORT || 3000;
 
 const dataList = [
     {
-        RegNo:'STD-1',
-        name: 'Parveez',
-        //Email: 'parveez123@gmail.com',
-        Phone: 8123456790     
-    },
-    {
-        RegNo:'STD-2',
-        name: 'Nayeem',
-        //Email: 'nayeem123@gmail.com',
-        Phone: 8123456980
-    },
-    {
-        RegNo:'STD-3',
-        name: 'Parveez',
-        //Email: 'parveez123@gmail.com',
-        Phone: 8123456790     
-    },
-    {
-        RegNo:'STD-4',
-        name: 'Nayeem',
-        //Email: 'nayeem123@gmail.com',
-        Phone: 8123456980
+        name:'Parveez Pasha',
+        User_Name:'Parveez@gmail.com',
+        Password: 'parvez@123',
+        
     }
+
 ];
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + "/sync.html");
+    res.sendFile(__dirname + "/SignUp.html");
 })
 app.post('/', (req, res) => {
     if (dataList != []) {
         for (let i in dataList) {
-            if (dataList[i].RegNo != '' && dataList[i].name != '') {
-                pool.query(`INSERT INTO salesforce.Student__c(RegNo__c,Name__c,phone__c)VALUES($1,$2,$3) ON CONFLICT (RegNo__c) DO NOTHING`, [`${dataList[i].RegNo}`, `${dataList[i].name}`, `${dataList[i].Phone}`]); 
+            if (dataList[i].name != '' && dataList[i].User_Name != ''  && dataList[i].Password != '') {
+                pool.query(`INSERT INTO salesforce.Registration__c(Uname__c,UserName__c,Password__c)VALUES($1,$2,$3) ON CONFLICT (UserName__c) DO NOTHING`, [`${dataList[i].name}`, `${dataList[i].User_Name}`, `${dataList[i].Password}`]); 
                 //(err, res) => {
 
                 // if (err) {
