@@ -29,19 +29,7 @@ app.post('/', (req, res) => {
         for (let i in dataList) {
             if (dataList[i].name != '' && dataList[i].User_Name != ''  && dataList[i].Password != '') {
                 pool.query(`INSERT INTO salesforce.Registration__c(Uname__c,UserName__c,Password__c)VALUES($1,$2,$3) ON CONFLICT (UserName__c) DO NOTHING`, [`${dataList[i].name}`, `${dataList[i].User_Name}`, `${dataList[i].Password}`]); 
-                //(err, res) => {
-
-                // if (err) {
-                //     console.log("Error-> Failed to insert data into amazon_orders");
-                //     console.log(err);
-                // } else {
-                //     console.log('DB res->', res);
-                // }
-
-
-
-           // }
-           // else {
+        
             }
         }
     }
